@@ -1,0 +1,2 @@
+CV App project made for The Odin Project curruiculum.
+The main goal was to practice some basic React concepts
