@@ -3,6 +3,8 @@ import { GeneralInfo } from './generalinfo'
 import { EducationalExp } from './educationalexp'
 import { ProfessionalExp } from './professionalexp'
 
+import { Field } from './field'
+
 
 export class Form extends Component {
   constructor(props) {
