@@ -41,6 +41,7 @@ export class EducationalExp extends Component {
           >
           </input>
         </div>
+        <hr />
       </section>
     )
   }
