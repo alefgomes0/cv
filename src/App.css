@@ -9,6 +9,7 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  padding: 10px 30px;
 }
 
 form {
@@ -29,6 +30,8 @@ header {
 
 input {
   margin-bottom: 10px;
+  padding-left: 7px;
+  border-radius: 10px;
 }
 
 button[type="submit"] {
@@ -36,4 +39,6 @@ button[type="submit"] {
   height: 30px;
   justify-self: center;
   cursor: pointer;
+  border-radius: 12px;
 }
+

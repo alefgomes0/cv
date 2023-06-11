@@ -6,7 +6,7 @@ export class Field extends Component {
 
 
 
-  // this.adjustName = this.adjustName.bind(this)
+  this.adjustName = this.adjustName.bind(this)
 
   }
 
@@ -21,7 +21,7 @@ export class Field extends Component {
     );
   } */
 
-/*   adjustName(someName) {
+  adjustName(someName) {
     let adjustedName = "";
     let index = 0;
     for (let s of someName) {
@@ -36,7 +36,7 @@ export class Field extends Component {
     }
 
     return adjustedName
-  } */
+  }
 
   render() {
     const { name, type = "text", placeholder = "" } = this.props;
@@ -46,7 +46,8 @@ export class Field extends Component {
         <input
           type={type}
           placeholder={placeholder}
-          data-name={name}
+          data-title = {name}
+          data-name={this.adjustName(name)}
           required
         ></input>
       </div>

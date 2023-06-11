@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./../App.css"
+import "./../App.css";
 import { Field } from "./field";
 
 let nextId = 0;
@@ -22,8 +22,9 @@ export class Form extends Component {
 
   handleOnChange(event) {
     const fieldName = event.target.dataset.name;
+    const fieldTitle = event.target.dataset.title;
     const index = this.state.fieldsInfo.findIndex(
-      (field) => field.name === fieldName
+      (field) => field.title === fieldTitle
     );
 
     if (index === -1) {
@@ -31,28 +32,30 @@ export class Form extends Component {
         {
           fieldsInfo: this.state.fieldsInfo.concat({
             id: nextId++,
-            name: fieldName,
-            value: event.target.value,
+            [fieldName]: event.target.value,
+            title: fieldTitle,
           }),
         },
-        () => console.log(this.state.fieldsInfo)
+        () => console.log(this.state.fieldsInfo, this.state.fieldsInfo[1])
       );
     } else {
       const updatedFieldsInfo = [...this.state.fieldsInfo];
-      updatedFieldsInfo[index].value = event.target.value;
+      updatedFieldsInfo[index][fieldName] = event.target.value;
       this.setState(
         {
           fieldsInfo: updatedFieldsInfo,
         },
-        () => console.log(this.state.fieldsInfo)
+        () => console.log(this.state.fieldsInfo, index)
       );
     }
   }
 
-
   render() {
     return (
-      <form onSubmit={this.handleOnSubmit} onChange={this.handleOnChange} className="idk">
+      <form
+        onSubmit={this.handleOnSubmit}
+        onChange={this.handleOnChange}
+      >
         <section className="general-info">
           <header>General Information</header>
           <br />
