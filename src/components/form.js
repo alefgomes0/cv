@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./../App.css"
 import { Field } from "./field";
 
 let nextId = 0;
@@ -13,7 +14,6 @@ export class Form extends Component {
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
-    this.showData = this.showData.bind(this);
   }
 
   handleOnSubmit(event) {
@@ -52,9 +52,9 @@ export class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleOnSubmit} onChange={this.handleOnChange}>
+      <form onSubmit={this.handleOnSubmit} onChange={this.handleOnChange} className="idk">
         <section className="general-info">
-          <label>General Information</label>
+          <header>General Information</header>
           <br />
           <Field name={"First Name"} placeholder={"John"} />
           <Field name={"Last Name"} placeholder={"Doe"} />
@@ -64,7 +64,7 @@ export class Form extends Component {
         <hr />
 
         <section className="professional-exp">
-          <label>Professional Experience</label>
+          <header>Professional Experience</header>
           <br />
           <Field name={"Company Name"} />
           <Field name={"Job Title"} />
@@ -75,7 +75,7 @@ export class Form extends Component {
         <hr />
 
         <section className="education">
-          <label>Education</label>
+          <header>Education</header>
           <br />
           <Field name={"Degree"} />
           <Field name={"Institution"} />

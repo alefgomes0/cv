@@ -41,14 +41,15 @@ export class Field extends Component {
   render() {
     const { name, type = "text", placeholder = "" } = this.props;
     return (
-      <>
+      <div className="field">
         <label>{name}</label>
         <input
           type={type}
           placeholder={placeholder}
           data-name={name}
+          required
         ></input>
-      </>
+      </div>
     );
   }
 }
