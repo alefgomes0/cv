@@ -1,40 +1,52 @@
 import React, { Component } from "react";
-import { Field } from "./field"
-
+import { Field } from "./field";
 
 let nextId = 0;
 
 export class Form extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      fieldsInfo: []
-    }
+      fieldsInfo: [],
+    };
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
-  } 
+    this.showData = this.showData.bind(this);
+  }
 
   handleOnSubmit(event) {
     event.preventDefault();
-
   }
-
 
   handleOnChange(event) {
     const fieldName = event.target.dataset.name;
+    const index = this.state.fieldsInfo.findIndex(
+      (field) => field.name === fieldName
+    );
 
-
-
-    this.setState({
-      
-
-      fieldsInfo: this.state.fieldsInfo.concat(
-        {name: fieldName, value: event.target.value, id: nextId++}
-      )
-    }, () => console.log(this.state.fieldsInfo )) 
-
+    if (index === -1) {
+      this.setState(
+        {
+          fieldsInfo: this.state.fieldsInfo.concat({
+            id: nextId++,
+            name: fieldName,
+            value: event.target.value,
+          }),
+        },
+        () => console.log(this.state.fieldsInfo)
+      );
+    } else {
+      const updatedFieldsInfo = [...this.state.fieldsInfo];
+      updatedFieldsInfo[index].value = event.target.value;
+      this.setState(
+        {
+          fieldsInfo: updatedFieldsInfo,
+        },
+        () => console.log(this.state.fieldsInfo)
+      );
+    }
   }
 
 
@@ -44,69 +56,35 @@ export class Form extends Component {
         <section className="general-info">
           <label>General Information</label>
           <br />
-          <Field 
-            name={"First Name"}
-            placeholder={"John"}
-          />
-          <Field 
-            name={"Last Name"}
-            placeholder={"Doe"}
-          />
-          <Field 
-            name={"Email"}
-            type={"email"}
-          />
-          <Field 
-            name={"Phone Number"}
-            type={"number"}
-          />
+          <Field name={"First Name"} placeholder={"John"} />
+          <Field name={"Last Name"} placeholder={"Doe"} />
+          <Field name={"Email"} type={"email"} />
+          <Field name={"Phone Number"} type={"number"} />
         </section>
         <hr />
 
         <section className="professional-exp">
           <label>Professional Experience</label>
           <br />
-          <Field 
-            name={"Company Name"}
-          />
-          <Field 
-            name={"Job Title"}
-          />
-          <Field 
-            name={"From: "}
-            type={"date"}
-          />
-          <Field 
-            name={"Until: "}
-            type={"date"}
-          />
-          <Field 
-            name={"Main Tasks "}
-          />
+          <Field name={"Company Name"} />
+          <Field name={"Job Title"} />
+          <Field name={"From: "} type={"date"} />
+          <Field name={"Until: "} type={"date"} />
+          <Field name={"Main Tasks "} />
         </section>
         <hr />
 
         <section className="education">
           <label>Education</label>
           <br />
-          <Field 
-            name={"Degree"}
-          />
-          <Field 
-            name={"Institution"}
-          />
-          <Field 
-            name={"Start Date"}
-            type={"date"}
-          />
-          <Field 
-            name={"End Date"}
-            type={"date"}
-          />
+          <Field name={"Degree"} />
+          <Field name={"Institution"} />
+          <Field name={"Start Date"} type={"date"} />
+          <Field name={"End Date"} type={"date"} />
         </section>
 
         <button type="submit">Preview</button>
       </form>
-    )
+    );
   }
 }

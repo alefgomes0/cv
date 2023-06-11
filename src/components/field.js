@@ -4,12 +4,9 @@ export class Field extends Component {
   constructor(props) {
     super(props);
 
-/*     this.state = {
-      fieldInfo: {
-        name: props.name,
-        value: "",
-      },
-    }; */
+
+
+  // this.adjustName = this.adjustName.bind(this)
 
   }
 
@@ -22,6 +19,23 @@ export class Field extends Component {
         },
       }),
     );
+  } */
+
+/*   adjustName(someName) {
+    let adjustedName = "";
+    let index = 0;
+    for (let s of someName) {
+      if (s === " ") continue
+      if (index === 0) {
+        adjustedName += s.toLowerCase()
+        index++;
+        continue
+      }
+      
+      adjustedName += s;
+    }
+
+    return adjustedName
   } */
 
   render() {
