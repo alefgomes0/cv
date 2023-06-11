@@ -10,13 +10,26 @@ class App extends Component {
     this.state = {
       isEdit: true
     };
+
+    this.handleButtonClick = this.handleButtonClick.bind(this)
   }
 
+  handleButtonClick() {
+    this.setState({
+      isEdit: !this.state.isEdit
+    })
+  }
+
+
   render() {
+    const { isEdit } = this.state
     return (
       <>
-        {this.state.isEdit && <Form />}
-        <DisplayInfo />
+        {isEdit && <Form />}
+        {!isEdit && <DisplayInfo />}
+        <button onClick={this.handleButtonClick}>
+          {isEdit ? "Preview" : "Edit"}
+        </button>
       </>
     );
   }

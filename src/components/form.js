@@ -10,6 +10,7 @@ export class Form extends Component {
 
     this.state = {
       fieldsInfo: [],
+      fieldsTags: {}
     };
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
@@ -35,17 +36,28 @@ export class Form extends Component {
             [fieldName]: event.target.value,
             title: fieldTitle,
           }),
-        },
-        () => console.log(this.state.fieldsInfo, this.state.fieldsInfo[1])
-      );
+          fieldsTags: {
+            ...this.state.fieldsTags,
+            [fieldName]: event.target.value
+          }
+        }, () => console.log(this.state.fieldsInfo, this.state.fieldsTags))
+        
+      
     } else {
       const updatedFieldsInfo = [...this.state.fieldsInfo];
       updatedFieldsInfo[index][fieldName] = event.target.value;
+
+
+
       this.setState(
         {
           fieldsInfo: updatedFieldsInfo,
+          fieldsTags: {
+            ...this.state.fieldsTags,
+            [fieldName]: event.target.value
+          }
         },
-        () => console.log(this.state.fieldsInfo, index)
+        () => console.log(this.state.fieldsInfo, this.state.fieldsTags)
       );
     }
   }
@@ -86,7 +98,7 @@ export class Form extends Component {
           <Field name={"End Date"} type={"date"} />
         </section>
 
-        <button type="submit">Preview</button>
+        <button type="submit">Save</button>
       </form>
     );
   }
