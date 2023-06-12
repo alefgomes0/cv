@@ -10,18 +10,28 @@ export class Form extends Component {
 
     this.state = {
       fieldsInfo: [],
-      fieldsTags: {}
+      fieldsTags: this.props.pica
     };
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.getAlert = this.getAlert.bind(this);
   }
+
+  componentDidMount() {
+    this.props.setClick(this.getAlert);
+ }
+ 
+ getAlert() {
+    this.props.passData(this.state.fieldsTags)
+ }
 
   handleOnSubmit(event) {
     event.preventDefault();
   }
 
   handleOnChange(event) {
+
     const fieldName = event.target.dataset.name;
     const fieldTitle = event.target.dataset.title;
     const index = this.state.fieldsInfo.findIndex(
@@ -48,7 +58,6 @@ export class Form extends Component {
       updatedFieldsInfo[index][fieldName] = event.target.value;
 
 
-
       this.setState(
         {
           fieldsInfo: updatedFieldsInfo,
@@ -61,6 +70,8 @@ export class Form extends Component {
       );
     }
   }
+
+
 
   render() {
     return (

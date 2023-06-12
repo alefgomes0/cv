@@ -35,6 +35,11 @@ input {
   height: 1.5rem;
 }
 
+input:focus {
+  outline: #0e0e79 solid 3px;
+  border: none;
+}
+
 button[type="submit"],
 button {
   width: 100px;
@@ -53,3 +58,9 @@ button[type="submit"]:hover {
   color: #fff;
 }
 
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
