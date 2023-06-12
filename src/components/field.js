@@ -3,39 +3,24 @@ import { Component } from "react";
 export class Field extends Component {
   constructor(props) {
     super(props);
-
-
-
-  this.adjustName = this.adjustName.bind(this)
-
+    this.adjustName = this.adjustName.bind(this);
   }
-
-/*   handleOnChange(event) {
-    this.setState(
-      (prevState) => ({
-        fieldInfo: {
-          ...prevState.fieldInfo,
-          value: event.target.value,
-        },
-      }),
-    );
-  } */
 
   adjustName(someName) {
     let adjustedName = "";
     let index = 0;
     for (let s of someName) {
-      if (s === " " || s === ":") continue
+      if (s === " " || s === ":") continue;
       if (index === 0) {
-        adjustedName += s.toLowerCase()
+        adjustedName += s.toLowerCase();
         index++;
-        continue
+        continue;
       }
-      
+
       adjustedName += s;
     }
 
-    return adjustedName
+    return adjustedName;
   }
 
   render() {

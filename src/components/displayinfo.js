@@ -6,6 +6,7 @@ export class DisplayInfo extends Component {
   }
 
   render() {
+    
     const { formInfo } = this.props
     return (
       <div className="info-preview">

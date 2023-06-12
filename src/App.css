@@ -21,11 +21,9 @@ form {
   box-shadow: -5px 0px 5px rgba(12, 12, 12, 0.5), 5px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-
 header {
   text-align: center;
   font-size: 40px;
-
 }
 
 .field {
@@ -42,7 +40,7 @@ input {
 }
 
 input:focus {
-  outline: #0e0e79 solid 2px;
+  outline: #4485be solid 3px;
   border: none;
 }
 
@@ -92,7 +90,6 @@ hr {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
-
 
 .top-section > * {
   margin: 0;
@@ -166,3 +163,12 @@ hr {
   font-size: 10px;
 }
 
+.hide {
+  display: none;
+}
+
+@media print {
+  .print-button {
+    display: none;
+  }
+}
