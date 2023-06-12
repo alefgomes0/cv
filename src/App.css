@@ -42,7 +42,7 @@ input {
 }
 
 input:focus {
-  outline: #0e0e79 solid 2px;
+  outline: #4485be solid 3px;
   border: none;
 }
 
@@ -166,3 +166,6 @@ hr {
   font-size: 10px;
 }
 
+.hide {
+  display: none;
+}

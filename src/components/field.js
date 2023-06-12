@@ -10,16 +10,6 @@ export class Field extends Component {
 
   }
 
-/*   handleOnChange(event) {
-    this.setState(
-      (prevState) => ({
-        fieldInfo: {
-          ...prevState.fieldInfo,
-          value: event.target.value,
-        },
-      }),
-    );
-  } */
 
   adjustName(someName) {
     let adjustedName = "";
@@ -39,7 +29,7 @@ export class Field extends Component {
   }
 
   render() {
-    const { name, type = "text", placeholder = "" } = this.props;
+    const { name, type = "text", placeholder = ""} = this.props;
     return (
       <div className="field">
         <label>{name}</label>

@@ -8,7 +8,8 @@ export class Form extends Component {
     super(props);
 
     this.state = {
-      fieldsTags: {}
+      fieldsTags: {},
+      isEditMode: false // New state property
     };
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
@@ -20,6 +21,7 @@ export class Form extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     this.props.passData(this.state.fieldsTags);
+    this.props.saveForm();
   }
 
   handleOnChange(event) {
@@ -40,10 +42,14 @@ export class Form extends Component {
 
 
   render() {
+      const { isEdit, isSubmit } = this.props
+      const formClassName = `${isEdit ? "" : "hide"} ${isSubmit ? "hide" : ""}`;
+
     return (
       <form
         onSubmit={this.handleOnSubmit}
         onChange={this.handleOnChange}
+        className={formClassName}
       >
         <section className="general-info">
           <header>General Information</header>
@@ -76,9 +82,8 @@ export class Form extends Component {
         </section>
 
         <button type="submit">Save</button>
-        <button onClick={this.changeEdit}>Preview</button>  
+        {isEdit && <button onClick={this.changeEdit}>Preview</button>}
       </form>
-      
     );
   }
 }
