@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./../App.css";
 import { Field } from "./field";
 
-let nextId = 0;
 
 export class Form extends Component {
   constructor(props) {

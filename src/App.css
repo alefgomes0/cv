@@ -55,6 +55,7 @@ button {
   border-radius: 12px;
   background-color: #332890;
   color: #e8dcdc;
+  margin-bottom: 20px;
 }
 
 button:hover,
@@ -78,6 +79,7 @@ hr {
 .info-preview {
   background-color: #fff;
   padding: 10px 20px;
+  box-shadow: -5px 0px 5px rgba(12, 12, 12, 0.5), 5px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .info-preview > * {
@@ -91,6 +93,7 @@ hr {
   grid-template-rows: 1fr 1fr;
 }
 
+
 .top-section > * {
   margin: 0;
   padding: 0;
@@ -98,11 +101,13 @@ hr {
 
 .full-name {
   align-self: center;
-  color: #0c3748;
+  color: #123f51;
 }
 
 .phone,
-.email {
+.email,
+.work,
+.education-preview {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,4 +125,34 @@ hr {
   display: grid;
   justify-content: center;
   justify-items: center;
+  grid-template-columns: repeat(1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+.middle-section > *,
+.bottom-section > * {
+  margin: 0;
+  padding: 0;
+}
+
+.middle-section > div > h2,
+.bottom-section > div > h2 {
+  color: #1b5268;
+}
+
+.inst-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inst-info > * {
+  margin: 0;
+  padding: 0;
+}
+
+.inst-info > p:last-of-type {
+  font-size: 10px;
 }

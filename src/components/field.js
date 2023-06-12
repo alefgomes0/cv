@@ -25,7 +25,7 @@ export class Field extends Component {
     let adjustedName = "";
     let index = 0;
     for (let s of someName) {
-      if (s === " ") continue
+      if (s === " " || s === ":") continue
       if (index === 0) {
         adjustedName += s.toLowerCase()
         index++;

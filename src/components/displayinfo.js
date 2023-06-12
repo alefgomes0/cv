@@ -25,7 +25,11 @@ export class DisplayInfo extends Component {
         <hr />
 
         <div className="middle-section">
-          <h2>Professional Experience</h2>
+          <div className="work">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 21q-.825 0-1.413-.588T2 19V8q0-.825.588-1.413T4 6h4V4q0-.825.588-1.413T10 2h4q.825 0 1.413.588T16 4v2h4q.825 0 1.413.588T22 8v11q0 .825-.588 1.413T20 21H4Zm6-15h4V4h-4v2Z"/></svg>
+            <h2>Professional Experience</h2>
+          </div>
+          
           <h4>Company Name</h4>
           <p>{`${formInfo.phoneNumber}`}</p>
           <h4>Job Title</h4>
@@ -34,17 +38,25 @@ export class DisplayInfo extends Component {
           <p>{`${formInfo.from} to ${formInfo.until}`}</p>
           <h4>Main Tasks</h4>
           <p>{`${formInfo.mainTasks}`}</p>
-          <hr />
         </div>
+        <br />
+        <hr />
 
         <div className="bottom-section">
-          <h2>Education</h2>
+          <div className="education-preview">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M3.33 8L10 12l10-6l-10-6L0 6h10v2H3.33zM0 8v8l2-2.22V9.2L0 8zm10 12l-5-3l-2-1.2v-6l7 4.2l7-4.2v6L10 20z"/></svg>
+            <h2>Education</h2>
+          </div>
+
+          
           <h4>Degree</h4>
           <p>{`${formInfo.degree}`}</p>
           <h4>Institution</h4>
-          <p>{`${formInfo.institution}`}</p>
-          <br />
-          <h5>{`(${formInfo.startDate}-${formInfo.endDate})`}</h5>
+          <div className="inst-info">
+            <p>{`${formInfo.institution}`}</p>
+            <p>{`(${formInfo.startDate} - ${formInfo.endDate})`}</p>
+          </div>
+          
         </div>
 
       </div>
