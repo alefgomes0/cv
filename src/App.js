@@ -3,8 +3,6 @@ import { Form } from "./components/form";
 import { DisplayInfo } from "./components/displayinfo"
 import "./App.css";
 
-// Queria conseguir passar esse state pro Form como prop
-// e depois receber o "update" dele
 
 class App extends Component {
   constructor(props) {
@@ -13,26 +11,17 @@ class App extends Component {
     this.state = {
       isEdit: true,
       formData: {},
-      teste: {}
     };
 
-    this.handleFormInfo = this.handleFormInfo.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.readFormData = this.readFormData.bind(this)
   }
 
-  handleFormInfo(userData) {
-    console.log(userData)
-  }
 
   handleButtonClick() {
     this.setState({
       isEdit: !this.state.isEdit
-    })
-
-    if (!this.state.isEdit) {
-      // ...
-    }
+    }, () => console.log(this.state.formData))
   }
 
   readFormData(userInfo) {
@@ -45,14 +34,11 @@ class App extends Component {
     const { isEdit } = this.state
     return (
       <>
-        {isEdit && <Form passData={this.readFormData} setClick={click => this.clickChild = click}/>}
+        {isEdit && <Form passData={this.readFormData} changeEdit={this.handleButtonClick}/>}
         {!isEdit && <DisplayInfo formInfo={this.state.formData}/>}
-        <div className="buttonContainer">
-          <button onClick={this.handleButtonClick}>
-            {isEdit ? "Preview" : "Edit"}
-          </button>
+        <div className="button-container">
+          {!isEdit && <button onClick={this.handleButtonClick}>Edit</button>}
         </div>
-        <button  onClick={() => this.clickChild()}>aaaaa</button>
       </>
     );
   }

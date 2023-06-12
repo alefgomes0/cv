@@ -13,19 +13,13 @@ export class Form extends Component {
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
-    this.getAlert = this.getAlert.bind(this);
+    this.changeEdit = this.changeEdit.bind(this)
   }
 
-  componentDidMount() {
-    this.props.setClick(this.getAlert);
- }
- 
- getAlert() {
-    this.props.passData(this.state.fieldsTags)
- }
 
   handleOnSubmit(event) {
     event.preventDefault();
+    this.props.passData(this.state.fieldsTags);
   }
 
   handleOnChange(event) {
@@ -36,7 +30,12 @@ export class Form extends Component {
         ...this.state.fieldsTags,
         [fieldName]: event.target.value
       }
-    }, () => console.log(this.state.fieldsTags))
+    })
+  }
+
+  changeEdit() {
+    this.props.changeEdit();
+    this.props.passData(this.state.fieldsTags);
   }
 
 
@@ -77,7 +76,9 @@ export class Form extends Component {
         </section>
 
         <button type="submit">Save</button>
+        <button onClick={this.changeEdit}>Preview</button>  
       </form>
+      
     );
   }
 }
