@@ -9,8 +9,7 @@ export class Form extends Component {
     super(props);
 
     this.state = {
-      fieldsInfo: [],
-      fieldsTags: this.props.pica
+      fieldsTags: {}
     };
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
@@ -31,46 +30,15 @@ export class Form extends Component {
   }
 
   handleOnChange(event) {
-
     const fieldName = event.target.dataset.name;
-    const fieldTitle = event.target.dataset.title;
-    const index = this.state.fieldsInfo.findIndex(
-      (field) => field.title === fieldTitle
-    );
 
-    if (index === -1) {
-      this.setState(
-        {
-          fieldsInfo: this.state.fieldsInfo.concat({
-            id: nextId++,
-            [fieldName]: event.target.value,
-            title: fieldTitle,
-          }),
-          fieldsTags: {
-            ...this.state.fieldsTags,
-            [fieldName]: event.target.value
-          }
-        }, () => console.log(this.state.fieldsInfo, this.state.fieldsTags))
-        
-      
-    } else {
-      const updatedFieldsInfo = [...this.state.fieldsInfo];
-      updatedFieldsInfo[index][fieldName] = event.target.value;
-
-
-      this.setState(
-        {
-          fieldsInfo: updatedFieldsInfo,
-          fieldsTags: {
-            ...this.state.fieldsTags,
-            [fieldName]: event.target.value
-          }
-        },
-        () => console.log(this.state.fieldsInfo, this.state.fieldsTags)
-      );
-    }
+    this.setState({
+      fieldsTags: {
+        ...this.state.fieldsTags,
+        [fieldName]: event.target.value
+      }
+    }, () => console.log(this.state.fieldsTags))
   }
-
 
 
   render() {

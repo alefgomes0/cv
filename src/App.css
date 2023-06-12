@@ -5,16 +5,22 @@
 }
 
 html,
-body,
-#root {
+body {
+  display: grid;
+  justify-items: center;
   width: 100%;
   height: 100%;
   padding: 10px 30px;
+  background-color: #e5dfdf;
 }
 
 form {
   display: grid;
+  padding: 0 30px;
+  background-color: #ffffff;
+  box-shadow: -5px 0px 5px rgba(12, 12, 12, 0.5), 5px 0px 5px rgba(0, 0, 0, 0.5);
 }
+
 
 header {
   text-align: center;
@@ -36,7 +42,7 @@ input {
 }
 
 input:focus {
-  outline: #0e0e79 solid 3px;
+  outline: #0e0e79 solid 2px;
   border: none;
 }
 
@@ -63,4 +69,55 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   padding-top: 15px;
+}
+
+hr {
+  border: 1px solid;
+}
+
+.info-preview {
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.info-preview > * {
+  margin: 0;
+  padding: 0;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.top-section > * {
+  margin: 0;
+  padding: 0;
+}
+
+.full-name {
+  align-self: center;
+  color: #0c3748;
+}
+
+.phone,
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 3px;
+}
+
+.phone {
+  grid-column: -2 / -1;
+  align-self: start;
+}
+
+.middle-section,
+.bottom-section {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
 }

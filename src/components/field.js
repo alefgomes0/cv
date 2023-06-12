@@ -46,9 +46,7 @@ export class Field extends Component {
         <input
           type={type}
           placeholder={placeholder}
-          data-title = {name}
           data-name={this.adjustName(name)}
-          required
         ></input>
       </div>
     );

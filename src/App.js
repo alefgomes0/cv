@@ -12,7 +12,8 @@ class App extends Component {
 
     this.state = {
       isEdit: true,
-      formData: {}
+      formData: {},
+      teste: {}
     };
 
     this.handleFormInfo = this.handleFormInfo.bind(this);
@@ -45,7 +46,7 @@ class App extends Component {
     return (
       <>
         {isEdit && <Form passData={this.readFormData} setClick={click => this.clickChild = click}/>}
-        {!isEdit && <DisplayInfo />}
+        {!isEdit && <DisplayInfo formInfo={this.state.formData}/>}
         <div className="buttonContainer">
           <button onClick={this.handleButtonClick}>
             {isEdit ? "Preview" : "Edit"}
