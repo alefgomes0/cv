@@ -26,10 +26,14 @@ class App extends Component {
   }
 
   readFormData(userInfo) {
-    this.setState({
-      formData: userInfo,
-    });
+    this.setState(
+      {
+        formData: userInfo,
+      },
+      () => console.log(this.state.formData)
+    );
   }
+
 
   handleFormSubmit() {
     this.setState({

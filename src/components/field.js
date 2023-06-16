@@ -24,7 +24,7 @@ export class Field extends Component {
   }
 
   render() {
-    const { name, type = "text", placeholder = "" } = this.props;
+    const { name, type = "text", placeholder = ""} = this.props;
     return (
       <div className="field">
         <label>{name}</label>
