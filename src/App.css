@@ -90,6 +90,42 @@ hr {
   opacity: 0.6;
 }
 
+.user-name,
+.user-personal-info,
+.user-prof-info,
+.from-until,
+.user-educ-info,
+.from-to {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 5px;
+}
+
+.user-name > div > input {
+  width: 100%;
+}
+
+.user-info > div > input:first {
+  width: 200%;
+}
+
+.user-info > div > input:last-of-type {
+  width: 80%;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  color: red;
+}
+
+.form-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 20px;
+}
+
 .info-preview {
   background-color: #fff;
   padding: 10px 20px;

@@ -54,35 +54,51 @@ export class Form extends Component {
         <section className="general-info">
           <header>General Information</header>
           <br />
-          <Field name={"First Name"} placeholder={"John"} />
-          <Field name={"Last Name"} placeholder={"Doe"} />
-          <Field name={"Email"} type={"email"} />
-          <Field name={"Phone Number"} type={"number"} />
+          <div className="user-name">
+            <Field name={"First Name"} placeholder={"John"} />
+            <Field name={"Last Name"} placeholder={"Doe"} />
+          </div>
+          <div className="user-personal-info">
+            <Field name={"Email"} type={"email"} />
+            <Field name={"Phone Number"} type={"number"} />
+          </div>      
         </section>
         <hr />
 
         <section className="professional-exp">
           <header>Professional Experience</header>
           <br />
-          <Field name={"Company Name"} />
-          <Field name={"Job Title"} />
-          <Field name={"From: "} type={"date"} />
-          <Field name={"Until: "} type={"date"} />
-          <Field name={"Main Tasks "} />
+          <div className="user-prof-info">
+            <Field name={"Company Name"} />
+            <Field name={"Job Title"} />
+          </div>      
+          <div className="from-until">
+            <Field name={"From: "} type={"date"} />
+            <Field name={"Until: "} type={"date"} />
+          </div>
+          <div className="main-tasks">
+            <Field name={"Main Tasks "} />
+          </div>
         </section>
         <hr />
 
         <section className="education">
           <header>Education</header>
           <br />
-          <Field name={"Degree"} />
-          <Field name={"Institution"} />
-          <Field name={"Start Date"} type={"date"} />
-          <Field name={"End Date"} type={"date"} />
+          <div className="user-educ-info">
+            <Field name={"Degree"} />
+            <Field name={"Institution"} />
+          </div>      
+          <div className="from-to">
+            <Field name={"Start Date"} type={"date"} />
+            <Field name={"End Date"} type={"date"} />
+          </div>
         </section>
 
-        <button type="submit">Save</button>
-        {isEdit && <button onClick={this.changeEdit}>Preview</button>}
+        <div className="form-buttons">
+          {isEdit && <button onClick={this.changeEdit}>Preview</button>}
+          <button type="submit">Save</button>
+        </div>
       </form>
     );
   }
