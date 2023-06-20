@@ -34,7 +34,6 @@ class App extends Component {
     );
   }
 
-
   handleFormSubmit() {
     this.setState({
       isSubmitted: true,

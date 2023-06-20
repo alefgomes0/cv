@@ -30,7 +30,7 @@ form {
   display: grid;
   padding: 0 30px;
   background-color: #ffffff;
-  box-shadow: -5px 0px 5px rgba(12, 12, 12, 0.5), 5px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 5px 5px 3px rgba(12, 12, 12, 0.5);
 }
 
 .general-info {
@@ -55,8 +55,15 @@ input {
   height: 1.5rem;
   border: 1px solid #0d0c0c;
   border-radius: 5px;
-  background-color: #eee3e3;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+  background: rgb(235, 233, 233);
+  background: linear-gradient(
+    180deg,
+    rgba(235, 233, 233, 1) 0%,
+    rgba(220, 220, 220, 1) 33%,
+    rgba(199, 198, 198, 1) 66%,
+    rgba(179, 179, 179, 1) 100%
+  );
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 input:focus {
@@ -70,16 +77,31 @@ button {
   height: 30px;
   justify-self: center;
   cursor: pointer;
-  border-radius: 12px;
-  background-color: #332890;
-  color: #e8dcdc;
+  border-radius: 4px;
+  background: rgb(59, 88, 211);
+  background: linear-gradient(
+    180deg,
+    rgba(59, 88, 211, 1) 0%,
+    rgba(54, 85, 214, 1) 33%,
+    rgba(42, 71, 195, 1) 66%,
+    rgba(22, 56, 204, 1) 100%
+  );
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+  color: #e8e1e1;
   margin-bottom: 20px;
 }
 
 button:hover,
 button[type="submit"]:hover {
   transition: 0.2s ease-in-out;
-  background-color: #0e0e79;
+  background: rgb(33, 61, 180);
+  background: linear-gradient(
+    180deg,
+    rgba(33, 61, 180, 1) 0%,
+    rgba(26, 52, 162, 1) 33%,
+    rgba(16, 43, 162, 1) 66%,
+    rgba(14, 38, 143, 1) 100%
+  );
   color: #fff;
 }
 
@@ -116,14 +138,6 @@ hr {
   width: 100%;
 }
 
-.user-info > div > input:first {
-  width: 200%;
-}
-
-.user-info > div > input:last-of-type {
-  width: 80%;
-}
-
 [type="date"]::-webkit-inner-spin-button {
   display: none;
 }
@@ -133,21 +147,31 @@ hr {
 }
 
 [type="date"] {
-  background: #eee3e3 url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+  background-color: rgb(235, 233, 233);
+  background-color: linear-gradient(
+    180deg,
+    rgba(235, 233, 233, 1) 0%,
+    rgba(220, 220, 220, 1) 33%,
+    rgba(199, 198, 198, 1) 66%,
+    rgba(179, 179, 179, 1) 100%
+  );
+  background-image: url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png);
+  background-position: 98%;
+  background-repeat: no-repeat;
 }
 
 .form-buttons {
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   padding-top: 20px;
 }
 
 .info-preview {
   background-color: #fff;
   padding: 10px 20px;
-  box-shadow: -5px 0px 5px rgba(12, 12, 12, 0.5), 5px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 5px 5px 3px rgba(12, 12, 12, 0.5);
 }
 
 .info-preview > * {
@@ -225,7 +249,7 @@ h4 {
 
 .middle-section > p,
 .bottom-section > p,
-.bottom-section > div > p  {
+.bottom-section > div > p {
   font-size: 12px;
 }
 
