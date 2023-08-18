@@ -48,7 +48,6 @@ form {
 }
 
 header {
-  text-align: center;
   font-size: 40px;
   opacity: 0.8;
 }
@@ -184,7 +183,6 @@ header {
 .form-buttons {
   display: flex;
   width: 100%;
-  justify-content: center;
   gap: 60px;
   padding-top: 20px;
 }
